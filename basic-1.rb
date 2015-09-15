@@ -1,1 +1,1 @@
-"Young " + "Tsai"
+puts "Young " + "Tsai"
