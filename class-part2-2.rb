@@ -1,6 +1,7 @@
 class MyCar
 	attr_accessor :color  #可以改的
   	attr_reader :yr		#read only
+  	attr_reader :model
 
 	def initialize(yr,color,model)
 		@yr=yr
@@ -14,13 +15,9 @@ class MyCar
 	#	puts "#{@yr}....."
 	#end
 
-	def color
-		puts "#{@color}"
-	end
-	
-	def model
-		puts "#{@model}"
-	end
+	def to_s
+    	"Mycar a is a #{yr},#{color},#{model}"
+    end
 
 	def speed_up(num)
 		@current_speed +=num
@@ -44,27 +41,23 @@ class MyCar
 	end
 
 	def spray_paint(color)
-		@color=color
-		puts "color change to #{@color}"
+		self.color=color
+		puts "color change to #{self.color}"
 	end
 
 	def gas_mileage(gas, miles)
     	puts "#{miles / gas} miles per gallon of gas"
     end
 
-    def to_s
-    	puts "Mycar a is a #{yr},#{color},#{model}"
-    	
-    end
-
-
+    
 
 end
 
 
-a=MyCar.new("13yr","black",188)
+a=MyCar.new("13yr","black","1k88")
 
-a.gas_mileage(3,100)
-a.to_s
+#a.gas_mileage(3,100)
+#puts a.color
+puts a
 
 
